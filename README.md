@@ -2,7 +2,9 @@
 
 A version of @unindented's [Kramdown](http://kramdown.gettalong.org/) editor that runs on Windows, supports MathJax, and uses CodeMirror for its editor.
 
-## Installing
+## Local usage and development
+
+### Installing
 
 If you have `bundler` installed, just run:
 
@@ -11,7 +13,7 @@ bundle install
 ```
 
 
-## Testing
+### Testing
 
 To run the tests, run the default `rake` task:
 
@@ -20,7 +22,7 @@ rake
 ```
 
 
-## Running locally
+### Running locally
 
 To run the app locally, just execute:
 
@@ -29,9 +31,15 @@ foreman start
 ```
 
 
-## Deploying to Heroku
+## Deployment
 
-To deploy to Heroku, first create an app:
+### Digital Ocean
+
+This app is currently deployed by Digital Ocean on the Apps platform. DO Apps watches this repo, and deploys the `master` branch automatically.
+
+### Heroku
+
+This app was originally designed to deploy to Heroku. To deploy to Heroku, first create an app:
 
 ```sh
 heroku create --stack cedar <app name>
@@ -43,7 +51,7 @@ Then push the code:
 git push heroku master
 ```
 
-And the app will be ready to go!
+And the app will be ready to go.
 
 
 
