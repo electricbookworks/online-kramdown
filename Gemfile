@@ -1,22 +1,18 @@
 source 'https://rubygems.org'
 
-gem 'rake', '~> 10.3.2'
+gem 'rake', '~> 13.0'
 
-gem 'thin', '~> 1.7.2'
-gem 'sinatra', '~> 1.4.5', require: 'sinatra/base'
-gem 'sinatra-contrib', '~> 1.4.2', require: 'sinatra/reloader'
+gem 'puma', '~> 6.4'
+gem 'sinatra', '~> 4.0', require: 'sinatra/base'
+gem 'sinatra-contrib', '~> 4.0', require: 'sinatra/reloader'
 
-gem 'coderay', '~> 1.1.0'
-gem 'kramdown', '~> 1.17.0'
+gem 'coderay', '~> 1.1'
+gem 'kramdown', '~> 2.4'
+
+# `ostruct` is no longer a default gem from Ruby 3.5 onward, so require it explicitly.
+gem 'ostruct'
 
 group :test do
-  gem 'rack-test', '~> 0.6.2', require: 'rack/test'
-  gem 'minitest', '~> 5.4.1', require: 'minitest/autorun'
+  gem 'rack-test', '~> 2.1', require: 'rack/test'
+  gem 'minitest', '~> 5.20', require: 'minitest/autorun'
 end
-
-# Windows workaround https://github.com/eventmachine/eventmachine/issues/820
-gem 'eventmachine', '1.2.7', git: 'git@github.com:eventmachine/eventmachine', tag: 'v1.2.7' if Gem.win_platform?
-
-# group :development do
-#   gem 'foreman'
-# end

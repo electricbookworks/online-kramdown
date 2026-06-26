@@ -14,8 +14,8 @@ describe OnlineKramdown::App do
     end
 
     it 'shows the index' do
-      last_response.must_be :ok?
-      last_response.body.must_include '<title>Online Kramdown Editor</title>'
+      _(last_response).must_be :ok?
+      _(last_response.body).must_include '<title>Online Kramdown Editor</title>'
     end
   end
 
@@ -26,8 +26,8 @@ describe OnlineKramdown::App do
       end
 
       it 'transforms the specified source' do
-        last_response.must_be :ok?
-        last_response.body.must_include '<h1 id="markdown">Markdown</h1>'
+        _(last_response).must_be :ok?
+        _(last_response.body).must_include '<h1 id="markdown">Markdown</h1>'
       end
     end
 
@@ -37,8 +37,8 @@ describe OnlineKramdown::App do
       end
 
       it 'transforms the specified source with the specified options' do
-        last_response.must_be :ok?
-        last_response.body.must_include '<h1>Markdown</h1>'
+        _(last_response).must_be :ok?
+        _(last_response.body).must_include '<h1>Markdown</h1>'
       end
     end
   end
