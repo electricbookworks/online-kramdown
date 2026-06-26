@@ -1,59 +1,39 @@
 # Online Kramdown Editor
 
-A version of @unindented's [Kramdown](http://kramdown.gettalong.org/) editor that runs on Windows, supports MathJax, and uses CodeMirror for its editor.
+A version of @unindented's [Kramdown](http://kramdown.gettalong.org/) editor that supports MathJax and uses CodeMirror for its editor.
 
-## Local usage and development
+Requires Ruby 3.4+.
+
+## Running in a Codespace
+
+Open this repo in a GitHub Codespace. Once the container is ready, install dependencies and start the server:
+
+```sh
+bundle install
+bundle exec puma -p 9292 config.ru
+```
+
+The app will be available on port 9292. Use the Ports panel in VS Code to open it in your browser.
+
+## Local development
 
 ### Installing
-
-If you have `bundler` installed, just run:
 
 ```sh
 bundle install
 ```
 
-
 ### Testing
-
-To run the tests, run the default `rake` task:
 
 ```sh
 rake
 ```
 
-
-### Running locally
-
-To run the app locally, just execute:
+### Running
 
 ```sh
-foreman start
+bundle exec puma -p 9292 config.ru
 ```
-
-
-## Deployment
-
-### Digital Ocean
-
-This app is currently deployed by Digital Ocean on the Apps platform. DO Apps watches this repo, and deploys the `master` branch automatically.
-
-### Heroku
-
-This app was originally designed to deploy to Heroku. To deploy to Heroku, first create an app:
-
-```sh
-heroku create --stack cedar <app name>
-```
-
-Then push the code:
-
-```sh
-git push heroku master
-```
-
-And the app will be ready to go.
-
-
 
 ## Credits
 
